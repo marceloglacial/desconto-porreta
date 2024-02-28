@@ -1,4 +1,4 @@
-const CardStore = (props) => {
+const CardStore = (props: { store?: string }) => {
   const { store = 'amazon' } = props;
 
   const storeLogo = {
