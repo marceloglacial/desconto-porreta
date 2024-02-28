@@ -1,7 +1,7 @@
 const CardStore = (props: { store?: string }) => {
   const { store = 'amazon' } = props;
 
-  const storeLogo = {
+  const storeLogo: any = {
     amazon: `https://www.pngall.com/wp-content/uploads/2016/03/Amazon-Logo-Transparent-PNG.png`,
     ml: `https://teamlinx.com/wp-content/uploads/2023/08/Accountability.png`,
     magalu: `https://logodownload.org/wp-content/uploads/2014/06/magalu-logo-0.png`,
