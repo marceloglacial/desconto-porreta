@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "MacBook",
+      "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
+      "image": {
+        "src": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Macbook",
+        "width": 200,
+        "height": 300
+      },
+      "store": "Amazon",
+      "price": {
+        "regular": 20000,
+        "discount": 12000
+      }
+    },
+    {
+      "id": 2,
+      "title": "iPhone",
+      "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
+      "image": {
+        "src": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "iPhone",
+        "width": 200,
+        "height": 300
+      },
+      "store": "Amazon",
+      "price": {
+        "regular": 9000
+      }
+    }
+  ]
+}

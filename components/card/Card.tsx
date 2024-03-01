@@ -1,39 +1,65 @@
+import { FC } from 'react';
+import Image, { ImageProps } from 'next/image';
 import ui from '@/ui';
-import Image from 'next/image';
+import { getCurrency } from '@/services';
 
-const Card = () => {
+interface CardProps {
+  image: ImageProps;
+  title: string;
+  description: string;
+  store: string;
+  price: {
+    discount?: number;
+    regular: number;
+  };
+  actions?: {
+    button: {
+      title: string;
+      link: string;
+    };
+  };
+}
+
+const Card: FC<CardProps> = ({
+  title,
+  description,
+  store,
+  price,
+  image,
+  actions,
+}): JSX.Element => {
   return (
     <div className={ui.card.container}>
       <div className={ui.card.image}>
-        <img
-          src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          alt='product'
-        />
+        <Image {...image} alt={image?.alt || ''} />
       </div>
       <div className={ui.card.body}>
         <div className={ui.card.title}>
-          <h2>Product title</h2>
+          <h2>{title}</h2>
         </div>
         <div className={ui.card.description}>
-          <p>
-            Sint magna Lorem fugiat reprehenderit duis. Aute aliquip
-            exercitation est officia qui veniam reprehenderit ullamco dolor.
-          </p>
+          <p>{description}</p>
         </div>
-        <div className='-store'>
-          <p>Vendido por: Amazon</p>
+        <div className={ui.card.store}>
+          <p>{store}</p>
         </div>
-        <div className='card-price flex flex-col pt-2 font-bold'>
-          <span className='card-price-regular text-xs text-red-600  line-through'>
-            R$ 199,00
+        <div className={ui.card.price.container}>
+          {price?.discount && (
+            <span className={ui.card.price.regular}>
+              {getCurrency(price.regular)}
+            </span>
+          )}
+          <span className={ui.card.price.discount}>
+            {getCurrency(price?.discount || price.regular)}
           </span>
-          <span className='card-price-discount text-2xl'>R$ 199,00</span>
         </div>
-        <div className='card-actions'>
-          <button className='px-4 py-2 bg-red-600 rounded-lg text-white font-bold'>
-            Ir para a loja!
-          </button>
-        </div>
+        {actions && (
+          <div className={ui.card.actions.container}>
+            <button className={ui.button.primary}>
+              {actions?.button.title}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

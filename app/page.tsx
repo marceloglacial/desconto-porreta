@@ -2,8 +2,11 @@ import Card from '@/components/card/Card';
 import CardStore from '@/components/card/CardStore';
 import NavBar from '@/components/navbar/Navbar';
 import SearchBar from '@/components/searchbar/SearchBar';
+import { getProducts } from '@/services';
 
 export default function Home() {
+  const products = getProducts();
+
   return (
     <div className='bg-white'>
       <header>
@@ -19,12 +22,9 @@ export default function Home() {
           <CardStore store='submarino' />
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {products.map((product) => {
+            return <Card key={product.id} {...product} />;
+          })}
         </div>
       </main>
     </div>
