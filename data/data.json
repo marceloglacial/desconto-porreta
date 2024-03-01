@@ -2,15 +2,16 @@
   "products": [
     {
       "id": 1,
-      "title": "MacBook",
+      "title": "ASUS TUF Gaming A16 Advantage Gaming Laptop 16” 16:10, AMD Ryzen™ 7 7735HS, AMD Radeon™ RX 7600S, 16GB DDR5, 1TB SSD, Windows 11 Home, Wi-Fi 6 - FA617NS-DS71-CA",
       "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
       "image": {
-        "src": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "src": "https://m.media-amazon.com/images/I/31EBS8HEClL._AC_SR400,600_.jpg",
         "alt": "Macbook",
         "width": 200,
         "height": 300
       },
       "store": "Amazon",
+      "link": "https://www.amazon.ca/ASUS-Gaming-Advantage-Laptop-FA617NS-DS71-CA/dp/B0BRNZ34M2?ref_=Oct_DLandingS_D_aa4f5881_0",
       "price": {
         "regular": 20000,
         "discount": 12000
@@ -18,16 +19,18 @@
     },
     {
       "id": 2,
-      "title": "iPhone",
+      "title": "LG 27MP60G-B 27 inch Full HD (1920 x 1080) IPS Monitor with AMD FreeSync and 1ms MBR Response Time, Black",
       "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
       "image": {
-        "src": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "src": "https://m.media-amazon.com/images/I/31AabseUVZS._AC_SR400,600_.jpg",
         "alt": "iPhone",
         "width": 200,
         "height": 300
       },
       "store": "Amazon",
+      "link": "https://www.amazon.ca/LG-27MP60G-B-Full-Monitor-FreeSync/dp/B08YJJKJQ6?ref_=Oct_DLandingS_D_946477fe_0",
       "price": {
+        "discount": 4500,
         "regular": 9000
       }
     }

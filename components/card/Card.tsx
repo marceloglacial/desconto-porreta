@@ -1,32 +1,25 @@
 import { FC } from 'react';
 import Image, { ImageProps } from 'next/image';
 import ui from '@/ui';
-import { getCurrency } from '@/services';
+import { getCurrency, getDiscount } from '@/services';
 
 interface CardProps {
   image: ImageProps;
   title: string;
-  description: string;
   store: string;
+  link: string;
   price: {
     discount?: number;
     regular: number;
-  };
-  actions?: {
-    button: {
-      title: string;
-      link: string;
-    };
   };
 }
 
 const Card: FC<CardProps> = ({
   title,
-  description,
   store,
   price,
   image,
-  actions,
+  link,
 }): JSX.Element => {
   return (
     <div className={ui.card.container}>
@@ -44,29 +37,29 @@ const Card: FC<CardProps> = ({
         <div className={ui.card.title}>
           <h2>{title}</h2>
         </div>
-        <div className={ui.card.description}>
-          <p>{description}</p>
-        </div>
         <div className={ui.card.store}>
-          <p>{store}</p>
+          <p>vendido por: {store}</p>
         </div>
         <div className={ui.card.price.container}>
           {price?.discount && (
-            <span className={ui.card.price.regular}>
-              {getCurrency(price.regular)}
-            </span>
+            <div>
+              <span className={ui.card.price.regular}>
+                {getCurrency(price.regular)}
+              </span>
+              <span className='text-xs text-white bg-orange-400 p-1 rounded ml-2'>
+                {getDiscount(price.regular, price?.discount || 0)}% off
+              </span>
+            </div>
           )}
           <span className={ui.card.price.discount}>
-            {getCurrency(price?.discount || price.regular)}
+            {getCurrency(price.discount || price.regular)}
           </span>
         </div>
-        {actions && (
-          <div className={ui.card.actions.container}>
-            <button className={ui.button.primary}>
-              {actions?.button.title}
-            </button>
-          </div>
-        )}
+        <div className={ui.card.actions.container}>
+          <a href={link} target='_blank' className={ui.button.primary}>
+            Ir para a loja!
+          </a>
+        </div>
       </div>
     </div>
   );
