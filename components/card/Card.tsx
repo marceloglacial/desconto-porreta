@@ -1,25 +1,26 @@
+import ui from '@/ui';
 import Image from 'next/image';
 
 const Card = () => {
   return (
-    <div className='card rounded-xl overflow-hidden border-4 shadow-lg'>
-      <div className='card-image'>
+    <div className={ui.card.container}>
+      <div className={ui.card.image}>
         <img
           src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='product'
         />
       </div>
-      <div className='card-info p-4 flex flex-col gap-2'>
-        <div className='card-title'>
-          <h2 className='font-bold'>Product title</h2>
+      <div className={ui.card.body}>
+        <div className={ui.card.title}>
+          <h2>Product title</h2>
         </div>
-        <div className='card-description'>
+        <div className={ui.card.description}>
           <p>
             Sint magna Lorem fugiat reprehenderit duis. Aute aliquip
             exercitation est officia qui veniam reprehenderit ullamco dolor.
           </p>
         </div>
-        <div className='card-store'>
+        <div className='-store'>
           <p>Vendido por: Amazon</p>
         </div>
         <div className='card-price flex flex-col pt-2 font-bold'>
