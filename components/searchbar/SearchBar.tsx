@@ -1,9 +1,12 @@
-export const SearchBar = () => {
+import ui from '@/ui';
+import { FC } from 'react';
+
+export const SearchBar: FC = (): JSX.Element => {
   return (
-    <div className='search-bar'>
+    <div className={ui.searchbar.container}>
       <input
         type='search'
-        className='border-4 rounded-xl w-full py-2 px-4'
+        className={ui.searchbar.input}
         placeholder='buscar produto'
       />
     </div>

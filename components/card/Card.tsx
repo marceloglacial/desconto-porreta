@@ -30,7 +30,7 @@ export const Card: FC<CardProps> = ({
             src={image.src}
             fill
             alt={image?.alt || ''}
-            sizes='(max-width: 200px) 100vw, (max-width: 600px) 50vw, 33vw"'
+            sizes='(max-width: 300px) 100vw, (max-width: 150px) 50vw, 33vw"'
             priority
           />
         </figure>

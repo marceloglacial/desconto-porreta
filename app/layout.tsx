@@ -1,8 +1,9 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import { NavBar, NavbarProps } from '@/components';
 import { getSiteInfo } from '@/services';
+import ui from '@/ui';
 
 const inter = Inter({ subsets: ['latin'] });
 const siteInfo = getSiteInfo();
@@ -29,7 +30,9 @@ export default function RootLayout({
         <header>
           <NavBar {...navbarProps} />
         </header>
-        {children}
+        <div className={ui.layout.container}>
+          <main className={ui.layout.main}>{children}</main>
+        </div>
       </body>
     </html>
   );
