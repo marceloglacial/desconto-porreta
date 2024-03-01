@@ -31,7 +31,14 @@ const Card: FC<CardProps> = ({
   return (
     <div className={ui.card.container}>
       <div className={ui.card.image}>
-        <Image {...image} alt={image?.alt || ''} />
+        <figure className={ui.card.figure}>
+          <Image
+            className={ui.card.image}
+            src={image.src}
+            fill
+            alt={image?.alt || ''}
+          />
+        </figure>
       </div>
       <div className={ui.card.body}>
         <div className={ui.card.title}>
