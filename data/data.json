@@ -1,0 +1,69 @@
+{
+  "site": {
+    "title": "🤑 Desconto Porreta",
+    "description": "Melhores descontos!"
+  },
+  "stores": [
+    {
+      "id": 1,
+      "title": "Amazon",
+      "logo": "https://logodownload.org/wp-content/uploads/2014/04/amazon-logo-12.png"
+    },
+    {
+      "id": 2,
+      "title": "Mercado Livre",
+      "logo": "https://logodownload.org/wp-content/uploads/2016/08/mercado-livre-logo-4-2.png"
+    },
+    {
+      "id": 3,
+      "title": "Magazine Luiza",
+      "logo": "https://logodownload.org/wp-content/uploads/2014/06/magalu-logo-0.png"
+    },
+    {
+      "id": 4,
+      "title": "Lojas Americanas",
+      "logo": "https://logodownload.org/wp-content/uploads/2020/11/lojas-americanas-logo-4.png"
+    },
+    {
+      "id": 5,
+      "title": "Submarino",
+      "logo": "https://logodownload.org/wp-content/uploads/2014/06/submarino-logo-5.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "ASUS TUF Gaming A16 Advantage Gaming Laptop 16” 16:10, AMD Ryzen™ 7 7735HS, AMD Radeon™ RX 7600S, 16GB DDR5, 1TB SSD, Windows 11 Home, Wi-Fi 6 - FA617NS-DS71-CA",
+      "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
+      "image": {
+        "src": "https://m.media-amazon.com/images/I/31EBS8HEClL._AC_SR400,600_.jpg",
+        "alt": "Macbook",
+        "width": 200,
+        "height": 300
+      },
+      "store": "Amazon",
+      "link": "https://www.amazon.ca/ASUS-Gaming-Advantage-Laptop-FA617NS-DS71-CA/dp/B0BRNZ34M2?ref_=Oct_DLandingS_D_aa4f5881_0",
+      "price": {
+        "regular": 20000,
+        "discount": 12000
+      }
+    },
+    {
+      "id": 2,
+      "title": "LG 27MP60G-B 27 inch Full HD (1920 x 1080) IPS Monitor with AMD FreeSync and 1ms MBR Response Time, Black",
+      "description": "Anim commodo in cillum commodo fugiat do et in amet cupidatat mollit culpa laborum et. Laborum nostrud anim fugiat commodo in adipisicing eu fugiat pariatur. Incididunt ullamco duis nisi minim anim ea officia labore voluptate veniam sint tempor consectetur voluptate. Tempor velit occaecat eiusmod deserunt aute qui aute proident. Veniam esse esse magna non deserunt sunt consequat eiusmod deserunt Lorem reprehenderit id. Dolore est voluptate magna eu do sit proident anim nostrud amet. Dolore aute pariatur laboris labore adipisicing laboris deserunt proident ex cupidatat exercitation dolore ipsum do.",
+      "image": {
+        "src": "https://m.media-amazon.com/images/I/31AabseUVZS._AC_SR400,600_.jpg",
+        "alt": "iPhone",
+        "width": 200,
+        "height": 300
+      },
+      "store": "Amazon",
+      "link": "https://www.amazon.ca/LG-27MP60G-B-Full-Monitor-FreeSync/dp/B08YJJKJQ6?ref_=Oct_DLandingS_D_946477fe_0",
+      "price": {
+        "discount": 4500,
+        "regular": 9000
+      }
+    }
+  ]
+}
