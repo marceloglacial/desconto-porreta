@@ -1,9 +1,9 @@
-import avatar from './avatar';
-import button from './button';
-import card from './card';
-import layout from './layout';
-import navbar from './navbar';
-import searchbar from './searchbar';
+import avatar from './components/avatar';
+import button from './components/button';
+import card from './components/card';
+import layout from './components/layout';
+import navbar from './components/navbar';
+import searchbar from './components/searchbar';
 
 const ui = {
   avatar,
