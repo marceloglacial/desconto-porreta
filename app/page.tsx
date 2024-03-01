@@ -1,7 +1,5 @@
-import Card from '@/components/card/Card';
 import CardStore from '@/components/card/CardStore';
-import NavBar from '@/components/navbar/Navbar';
-import SearchBar from '@/components/searchbar/SearchBar';
+import { Card, SearchBar } from '@/components';
 import { getProducts } from '@/services';
 
 export default function Home() {
@@ -20,9 +18,6 @@ export default function Home() {
 
   return (
     <div className='bg-white'>
-      <header>
-        <NavBar />
-      </header>
       <main className='flex min-h-screen flex-col gap-4  pt-20 max-w-screen-xl mx-auto'>
         <div className='stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4'>
           <CardStore />

@@ -1,9 +1,11 @@
-import card from './card';
 import button from './button';
+import card from './card';
+import navbar from './navbar';
 
 const ui = {
-  card,
   button,
+  card,
+  navbar,
 };
 
 export default ui;

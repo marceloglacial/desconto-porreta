@@ -1,11 +1,18 @@
-const NavBar = () => {
+import ui from '@/ui';
+import { FC } from 'react';
+
+export interface NavbarProps {
+  branding: {
+    title: string;
+  };
+}
+
+export const NavBar: FC<NavbarProps> = ({ branding }): JSX.Element => {
   return (
-    <nav className='p-4 bg-slate-600 text-white font-bold text-center lg:text-left fixed w-full z-50'>
-      <div className=' max-w-screen-xl mx-auto px-4'>
-        <h1 className=' text-2xl'>🤑 Desconto Porreta</h1>
+    <nav className={ui.navbar.container}>
+      <div className={ui.navbar.content}>
+        <h1 className={ui.navbar.branding}>{branding.title}</h1>
       </div>
     </nav>
   );
 };
-
-export default NavBar;

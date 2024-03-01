@@ -1,4 +1,8 @@
 {
+  "site": {
+    "title": "🤑 Desconto Porreta",
+    "description": "Melhores descontos!"
+  },
   "products": [
     {
       "id": 1,
