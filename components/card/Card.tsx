@@ -1,40 +1,68 @@
-import Image from 'next/image';
+import { FC } from 'react';
+import Image, { ImageProps } from 'next/image';
+import ui from '@/ui';
+import { getCurrency, getDiscount } from '@/services';
 
-const Card = () => {
+interface CardProps {
+  image: ImageProps;
+  title: string;
+  store: string;
+  link: string;
+  price: {
+    discount?: number;
+    regular: number;
+  };
+}
+
+export const Card: FC<CardProps> = ({
+  title,
+  store,
+  price,
+  image,
+  link,
+}): JSX.Element => {
   return (
-    <div className='card rounded-xl overflow-hidden border-4 shadow-lg'>
-      <div className='card-image'>
-        <img
-          src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          alt='product'
-        />
+    <div className={ui.card.container}>
+      <div className={ui.card.image}>
+        <figure className={ui.card.figure}>
+          <Image
+            className={ui.card.image}
+            src={image.src}
+            fill
+            alt={image?.alt || ''}
+            sizes='(max-width: 300px) 100vw, (max-width: 150px) 50vw, 33vw"'
+            priority
+          />
+        </figure>
       </div>
-      <div className='card-info p-4 flex flex-col gap-2'>
-        <div className='card-title'>
-          <h2 className='font-bold'>Product title</h2>
+      <div className={ui.card.body}>
+        <div className={ui.card.title}>
+          <h2>{title}</h2>
         </div>
-        <div className='card-description'>
-          <p>
-            Sint magna Lorem fugiat reprehenderit duis. Aute aliquip
-            exercitation est officia qui veniam reprehenderit ullamco dolor.
-          </p>
+        <div className={ui.card.store}>
+          <p>vendido por: {store}</p>
         </div>
-        <div className='card-store'>
-          <p>Vendido por: Amazon</p>
-        </div>
-        <div className='card-price flex flex-col pt-2 font-bold'>
-          <span className='card-price-regular text-xs text-red-600  line-through'>
-            R$ 199,00
+        <div className={ui.card.price.container}>
+          {price?.discount && (
+            <div>
+              <span className={ui.card.price.regular}>
+                {getCurrency(price.regular)}
+              </span>
+              <span className='text-xs text-white bg-orange-400 p-1 rounded ml-2'>
+                {getDiscount(price.regular, price?.discount || 0)}% off
+              </span>
+            </div>
+          )}
+          <span className={ui.card.price.discount}>
+            {getCurrency(price.discount || price.regular)}
           </span>
-          <span className='card-price-discount text-2xl'>R$ 199,00</span>
         </div>
-        <div className='card-actions'>
-          <button className='px-4 py-2 bg-red-600 rounded-lg text-white font-bold'>
+        <div className={ui.card.actions.container}>
+          <a href={link} target='_blank' className={ui.button.primary}>
             Ir para a loja!
-          </button>
+          </a>
         </div>
       </div>
     </div>
   );
 };
-export default Card;
