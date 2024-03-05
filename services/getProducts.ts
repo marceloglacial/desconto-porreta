@@ -9,5 +9,7 @@ export const getProducts = () => {
     ...data.products,
     ...data.products,
     ...data.products,
+    ...data.products,
+    ...data.products,
   ];
 };

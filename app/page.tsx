@@ -1,6 +1,5 @@
 import { Avatar, Card, SearchBar } from '@/components';
 import { getProducts, getStores } from '@/services';
-import Link from 'next/link';
 
 export default function Home() {
   const products = getProducts();
