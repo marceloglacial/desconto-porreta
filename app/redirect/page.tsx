@@ -24,8 +24,9 @@ const Redirect: React.FC = () => {
     <div
       aria-label='Loading...'
       role='status'
-      className=' w-wull h-screen flex items-center justify-center'
+      className=' w-wull h-screen flex items-center flex-col gap-2'
     >
+      <strong>Carregando orferta!</strong>
       <svg
         width='24'
         height='24'
@@ -36,7 +37,7 @@ const Redirect: React.FC = () => {
         strokeLinecap='round'
         strokeLinejoin='round'
         xmlns='http://www.w3.org/2000/svg'
-        className='animate-spin w-32 h-32 stroke-slate-500'
+        className='animate-spin w-16 h-16 stroke-slate-500'
       >
         <path d='M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12'></path>
       </svg>
