@@ -67,9 +67,13 @@ export const Card: FC<CardProps> = ({
           </div>
         </Link>
         <div className={ui.card.actions.container}>
-          <a href={link} target='_blank' className={ui.button.primary}>
+          <Link
+            href={`/redirect?url=${link}`}
+            target='_blank'
+            className={ui.button.primary}
+          >
             Ir para a loja!
-          </a>
+          </Link>
         </div>
       </div>
     </div>
