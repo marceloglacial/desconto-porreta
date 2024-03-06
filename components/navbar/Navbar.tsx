@@ -1,4 +1,5 @@
 import ui from '@/ui';
+import Link from 'next/link';
 import { FC } from 'react';
 
 export interface NavbarProps {
@@ -11,7 +12,9 @@ export const NavBar: FC<NavbarProps> = ({ branding }): JSX.Element => {
   return (
     <nav className={ui.navbar.container}>
       <div className={ui.navbar.content}>
-        <h1 className={ui.navbar.branding}>{branding.title}</h1>
+        <Link href={'/'}>
+          <h1 className={ui.navbar.branding}>{branding.title}</h1>
+        </Link>
       </div>
     </nav>
   );
