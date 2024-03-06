@@ -1,5 +1,6 @@
+import { productMessages } from '@/constants';
 import data from '@/data/data.json';
-export const getProducts = () => {
+export const getProducts = (): IProduct[] => {
   return [
     ...data.products,
     ...data.products,
@@ -14,8 +15,8 @@ export const getProducts = () => {
   ];
 };
 
-export const getSingleProduct = (id: string) => {
-  return data.products.find((product) => product.id === id);
+export const getSingleProduct = (id: string): IProduct | undefined => {
+  return data.products.find((product): IProduct | Object => product.id === id);
 };
 
 export const getDiscount = (regular: number, final: number): number =>

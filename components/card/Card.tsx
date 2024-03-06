@@ -4,19 +4,7 @@ import ui from '@/ui';
 import { getCurrency, getDiscount } from '@/services';
 import Link from 'next/link';
 
-interface CardProps {
-  id: number;
-  image: ImageProps;
-  title: string;
-  store: string;
-  link: string;
-  price: {
-    discount?: number;
-    regular: number;
-  };
-}
-
-export const Card: FC<CardProps> = ({
+export const Card: FC<IProduct> = ({
   id,
   title,
   store,
