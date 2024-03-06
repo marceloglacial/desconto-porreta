@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import Image, { ImageProps } from 'next/image';
+import Image from 'next/image';
 import ui from '@/ui';
-import { getCurrency, getDiscount } from '@/services';
+import { getCurrency, getDiscount, getStoreById } from '@/services';
 import Link from 'next/link';
 
 export const Card: FC<IProduct> = ({
@@ -12,6 +12,7 @@ export const Card: FC<IProduct> = ({
   image,
   link,
 }): JSX.Element => {
+  const vendor = getStoreById(store)
   return (
     <div className={ui.card.container}>
       <div className={ui.card.image}>
@@ -36,7 +37,7 @@ export const Card: FC<IProduct> = ({
         </div>
         <Link href={`/produto/${id}`}>
           <div className={ui.card.store}>
-            <p>vendido por: {store}</p>
+            <p>vendido por: {vendor?.title}</p>
           </div>
           <div className={ui.card.price.container}>
             {price?.discount && (
@@ -44,7 +45,7 @@ export const Card: FC<IProduct> = ({
                 <span className={ui.card.price.regular}>
                   {getCurrency(price.regular)}
                 </span>
-                <span className='text-xs text-white bg-orange-400 p-1 rounded ml-2'>
+                <span className={ui.card.price.percentageOff}>
                   {getDiscount(price.regular, price?.discount || 0)}% off
                 </span>
               </div>

@@ -3,4 +3,5 @@ export const productMessages = {
     message: 'Produto não encontrado',
   },
   ctaButton: 'Ir para a loja!',
+  emptyList: 'Nenhum produto encontrado.'
 };
