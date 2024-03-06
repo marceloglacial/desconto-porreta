@@ -22,8 +22,14 @@ export const getSingleProduct = (id: string): IProduct | undefined => {
   );
 };
 
-export const getDiscount = (regular: number, final: number): number =>
-  (final / regular) * 100;
+export const getProductsByStore = (id: string) => {
+  return data.products.filter((product) => product.store === id);
+};
+
+export function getDiscount(regularPrice: number, finalPrice: number): number {
+  const discountPercentage = ((regularPrice - finalPrice) / regularPrice) * 100;
+  return Math.round(discountPercentage);
+}
 
 export const getCurrency = (value: number): string =>
   value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
