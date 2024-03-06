@@ -1,21 +1,27 @@
 import { Avatar, Card, SearchBar } from '@/components';
 import { getProducts, getStores } from '@/services';
+import ui from '@/ui';
+import Link from 'next/link';
 
 export default function Home() {
   const products = getProducts();
   const stores = getStores();
 
   return (
-    <div className='home__container'>
-      <div className='home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4'>
+    <div className={ui.layout.homePage.container}>
+      <div className={ui.layout.homePage.stores}>
         {stores.map((store) => {
-          const { id, logo, title } = store;
-          return <Avatar key={id} image={{ src: logo, alt: title }} />;
+          const { id, logo, title, slug } = store;
+          return (
+            <Link href={`/loja/${slug}`} key={id}>
+              <Avatar image={{ src: logo, alt: title }} />
+            </Link>
+          );
         })}
       </div>
-      <div className='home__content px-4 flex flex-col gap-4'>
+      <div className={ui.layout.homePage.content}>
         <SearchBar />
-        <div className='home__products grid grid-cols-2 lg:grid-cols-5 gap-4'>
+        <div className={ui.layout.homePage.products}>
           {products.map((product, index) => {
             return <Card key={index} {...product} />;
           })}
