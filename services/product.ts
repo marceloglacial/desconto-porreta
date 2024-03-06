@@ -16,7 +16,10 @@ export const getProducts = (): IProduct[] => {
 };
 
 export const getSingleProduct = (id: string): IProduct | undefined => {
-  return data.products.find((product): IProduct | Object => product.id === id);
+  return (
+    data.products.find((product): IProduct | Object => product.id === id) ||
+    undefined
+  );
 };
 
 export const getDiscount = (regular: number, final: number): number =>

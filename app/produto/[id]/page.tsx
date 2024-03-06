@@ -1,22 +1,22 @@
+import { productMessages } from '@/constants';
 import { getCurrency, getDiscount, getSingleProduct } from '@/services';
 import ui from '@/ui';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
 
-const Produto: FC = (): JSX.Element => {
-  const product = getSingleProduct('1');
+const Produto = ({ params }: { params: { id: string } }): JSX.Element => {
+  const product = getSingleProduct(params.id);
 
-  if (!product) return <h2>Erro ao carregar o produto</h2>;
+  if (!product) return <h2>{productMessages.error.message}</h2>;
 
   const { title, image, price, store, link } = product;
   return (
-    <div className='product__container px-4 flex flex-col gap-4'>
-      <h1 className='product__title text-2xl font-bold'>{title}</h1>
-      <div className='grid lg:grid-cols-2'>
-        <figure className={ui.card.figure}>
+    <div className={ui.layout.productpage.container}>
+      <h1 className={ui.layout.productpage.title}>{title}</h1>
+      <div className={ui.layout.productpage.info}>
+        <figure className={ui.layout.productpage.figure}>
           <Image
-            className={ui.card.image}
+            className={ui.layout.productpage.image}
             src={image.src}
             fill
             alt={image?.alt || ''}
@@ -24,32 +24,32 @@ const Produto: FC = (): JSX.Element => {
             priority
           />
         </figure>
-        <div className='flex flex-col justify-between'>
-          <div className={ui.card.store}>
+        <div className={ui.layout.productpage.description}>
+          <div className={ui.layout.productpage.vendor}>
             <p>vendido por: {store}</p>
           </div>
-          <div className={ui.card.price.container}>
+          <div className={ui.layout.productpage.priceContainer}>
             {price?.discount && (
               <div>
-                <span className={ui.card.price.regular}>
+                <span className={ui.layout.productpage.discount}>
                   {getCurrency(price.regular)}
                 </span>
-                <span className='text-xs text-white bg-orange-400 p-1 rounded ml-2'>
+                <span className={ui.layout.productpage.discountBadge}>
                   {getDiscount(price.regular, price?.discount || 0)}% off
                 </span>
               </div>
             )}
-            <span className={ui.card.price.discount}>
+            <span className={ui.layout.productpage.price}>
               {getCurrency(price.discount || price.regular)}
             </span>
           </div>
-          <div className={ui.card.actions.container}>
+          <div className={ui.layout.productpage.button}>
             <Link
               href={`/redirect?url=${link}`}
               target='_blank'
               className={ui.button.primary}
             >
-              Ir para a loja!
+              {productMessages.ctaButton}
             </Link>
           </div>
         </div>
