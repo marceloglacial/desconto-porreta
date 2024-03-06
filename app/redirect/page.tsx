@@ -1,6 +1,6 @@
 'use client';
 
-import global from '@/constants/global';
+import { global } from '@/constants';
 import { useEffect } from 'react';
 
 const Redirect: React.FC = () => {
