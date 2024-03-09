@@ -1,5 +1,5 @@
 import { Avatar, Card } from '@/components';
-import { vendorMessages } from '@/constants';
+import { productMessages, vendorMessages } from '@/constants';
 import { getProductsByVendor, getVendorBySlug } from '@/services';
 import ui from '@/ui';
 
@@ -18,7 +18,7 @@ const Loja = async ({ params }: { params: { slug: string } }) => {
         <h1 className=''>{name}</h1>
       </div>
       <div className={ui.layout.storePage.products}>
-        {!products.length && <div>{vendorMessages.emptyList}</div>}
+        {!products.length && <div>{productMessages.emptyList}</div>}
         {products.map((product, index) => {
           return <Card key={index} {...product} />;
         })}
