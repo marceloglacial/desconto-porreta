@@ -1,20 +1,24 @@
 import { Avatar, Card, SearchBar } from '@/components';
-import { getProducts, getStores } from '@/services';
+import { productMessages } from '@/constants';
+import { getProducts, getVendors } from '@/services';
 import ui from '@/ui';
 import Link from 'next/link';
 
-export default function Home() {
-  const products = getProducts();
-  const stores = getStores();
+export default async function Home() {
+  const products = await getProducts();
+  const allProducts = products.data
+
+  const vendors = await getVendors();
+  const allVendors = vendors.data
 
   return (
     <div className={ui.layout.homePage.container}>
       <div className={ui.layout.homePage.stores}>
-        {stores.map((store) => {
-          const { id, logo, title, slug } = store;
+        {allVendors.map((vendor) => {
+          const { id, logo, slug, name } = vendor;
           return (
-            <Link href={`/loja/${slug}`} key={id}>
-              <Avatar image={{ src: logo, alt: title }} />
+            <Link href={`/loja/${slug}`} key={parseInt(id)}>
+              <Avatar image={{ src: logo, alt: name }} />
             </Link>
           );
         })}
@@ -22,7 +26,8 @@ export default function Home() {
       <div className={ui.layout.homePage.content}>
         <SearchBar />
         <div className={ui.layout.homePage.products}>
-          {products.map((product, index) => {
+          {!allProducts.length && <div>{productMessages.emptyList}</div>}
+          {allProducts?.map((product, index) => {
             return <Card key={index} {...product} />;
           })}
         </div>

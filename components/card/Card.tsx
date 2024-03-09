@@ -1,18 +1,17 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import ui from '@/ui';
-import { getCurrency, getDiscount, getStoreById } from '@/services';
+import { getCurrency, getDiscount } from '@/services';
 import Link from 'next/link';
 
 export const Card: FC<IProduct> = ({
   id,
   title,
-  store,
+  vendor,
   price,
   image,
   link,
 }): JSX.Element => {
-  const vendor = getStoreById(store)
   return (
     <div className={ui.card.container}>
       <div className={ui.card.image}>
@@ -37,7 +36,7 @@ export const Card: FC<IProduct> = ({
         </div>
         <Link href={`/produto/${id}`}>
           <div className={ui.card.store}>
-            <p>vendido por: {vendor?.title}</p>
+            <p>vendido por: {vendor.name}</p>
           </div>
           <div className={ui.card.price.container}>
             {price?.discount && (

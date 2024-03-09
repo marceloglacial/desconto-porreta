@@ -1,16 +1,16 @@
 import { productMessages } from '@/constants';
-import { getCurrency, getDiscount, getSingleProduct, getStoreById } from '@/services';
+import { getCurrency, getDiscount, getSingleProduct, getSingleVendor } from '@/services';
 import ui from '@/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Produto = ({ params }: { params: { id: string } }): JSX.Element => {
-  const product = getSingleProduct(params.id);
-
-  if (!product) return <h2>{productMessages.error.message}</h2>;
+const Produto = async ({ params }: { params: { id: string } }) => {
+  const product = await getSingleProduct(params.id);
   
-  const { title, image, price, store, link } = product;
-  const vendor = getStoreById(store)
+  if (!product) return <h2>{productMessages.error.message}</h2>;
+    
+  const { title, image, price, link } = product;
+  const vendor = await getSingleVendor(product.vendor.id)
 
   return (
     <div className={ui.layout.productpage.container}>
@@ -28,7 +28,7 @@ const Produto = ({ params }: { params: { id: string } }): JSX.Element => {
         </figure>
         <div className={ui.layout.productpage.description}>
           <div className={ui.layout.productpage.vendor}>
-            <p><Link href={`/loja/${vendor?.slug}`}>vendido por: {vendor?.title}</Link></p>
+            <p><Link href={`/loja/${vendor?.slug}`}>vendido por: {vendor?.name}</Link></p>
           </div>
           <div className={ui.layout.productpage.priceContainer}>
             {price?.discount && (

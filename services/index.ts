@@ -1,3 +1,3 @@
 export * from './sites';
-export * from './stores';
 export * from './product';
+export * from './vendor'
