@@ -6,7 +6,7 @@ const collection = 'vendors'
 export async function GET(_request: Request) {
     const client = await clientPromise
     const cursor = await client.db(database).collection(collection).find();
-    const products = (await cursor.toArray()).slice(0, 10)
+    const products = (await cursor.toArray())
     return Response.json(products)
 }
 
