@@ -19,8 +19,8 @@ const Loja = async ({ params }: { params: { slug: string } }) => {
       </div>
       <div className={ui.layout.storePage.products}>
         {!products.length && <div>{productMessages.emptyList}</div>}
-        {products.map((product, index) => {
-          return <Card key={index} {...product} />;
+        {products.map((product) => {
+          return <Card key={product.id} {...product} />;
         })}
       </div>
     </section>

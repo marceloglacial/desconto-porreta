@@ -27,8 +27,8 @@ export default async function Home() {
         <SearchBar />
         <div className={ui.layout.homePage.products}>
           {!allProducts.length && <div>{productMessages.emptyList}</div>}
-          {allProducts?.map((product, index) => {
-            return <Card key={index} {...product} />;
+          {allProducts?.map((product) => {
+            return <Card key={product.id} {...product} />;
           })}
         </div>
       </div>

@@ -6,41 +6,41 @@ interface IgetProducts {
 }
 
 const formatProduct = (product: ApiProduct): IProduct => {
-  const { id, attributes } = product;
-  const { title, link, priceRegular, priceDiscount, vendor, image } = attributes;
+  const { _id, title, link, price, vendor_info, image } = product;
+  const vendorInfo = vendor_info[0]
 
   return {
-    id: id.toString(),
+    id: _id,
     title,
     link,
     description: title,
     image: {
-      src: image.data.attributes.url,
-      alt: image.data.attributes.alternativeText || title,
-      width: image.data.attributes.width,
-      height: image.data.attributes.height,
+      src: image.src,
+      alt: image.alt || title,
+      width: image.width || 300,
+      height: image.height || 300
     },
     vendor: {
-      id: vendor.data.id.toString(),
-      name: vendor.data.attributes.name,
-      slug: vendor.data.attributes.slug
+      id: vendorInfo._id,
+      name: vendorInfo.title,
+      slug: vendorInfo.slug,
     },
     price: {
-      regular: priceRegular,
-      discount: priceDiscount || undefined,
+      regular: price.regular,
+      discount: price.discount || undefined,
     },
   };
 }
 
 export const getProducts = async (): Promise<IgetProducts> => {
-  const res = await fetch('http://localhost:1337/api/products?populate=*')
+  const res = await fetch(`${process.env.SITE_URL}/api/products`)
   if (!res.ok) {
     throw new Error(productMessages.error.message)
   }
   const apiData = await res.json()
   const result = {
-    data: apiData.data.map((item: ApiProduct) => formatProduct(item)),
-    meta: apiData.meta
+    data: apiData.map((item: ApiProduct) => formatProduct(item)),
+    meta: apiData?.meta
   }
   return result
 };
