@@ -19,7 +19,7 @@ const formatVendor = (vendor: ApiVendor): IVendor => {
 }
 
 export const getVendors = async (): Promise<IgetVendors> => {
-    const res = await fetch(`${process.env.SITE_URL}/api/vendors`)
+    const res = await fetch(`${process.env.API_URL}/api/vendors`)
     if (!res.ok) {
         throw new Error('Loja não encontrada')
     }

@@ -17,7 +17,7 @@ export default async function Home() {
         {allVendors.map((vendor) => {
           const { id, logo, slug, name } = vendor;
           return (
-            <Link href={`/loja/${slug}`} key={parseInt(id)}>
+            <Link href={`/loja/${slug}`} key={id}>
               <Avatar image={{ src: logo, alt: name }} />
             </Link>
           );

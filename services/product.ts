@@ -33,7 +33,7 @@ const formatProduct = (product: ApiProduct): IProduct => {
 }
 
 export const getProducts = async (): Promise<IgetProducts> => {
-  const res = await fetch(`${process.env.SITE_URL}/api/products`)
+  const res = await fetch(`${process.env.API_URL}/api/products`)
   if (!res.ok) {
     throw new Error(productMessages.error.message)
   }
