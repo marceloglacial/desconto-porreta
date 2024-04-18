@@ -25,7 +25,7 @@ const layout = {
     button: 'product__price--button lg:max-w-xs',
   },
   storePage: {
-    container: 'store__container flex flex-col gap-8',
+    container: 'store__container flex flex-col gap-8 mx-4',
     branding: 'store__branding flex gap-4 text-4xl items-center font-bold ',
     title: 'store__title text-slate-600',
     products: 'store__products grid grid-cols-2 lg:grid-cols-5 gap-4'
