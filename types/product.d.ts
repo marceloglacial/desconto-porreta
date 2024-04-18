@@ -8,7 +8,11 @@ interface IProduct {
     width: number;
     height: number;
   };
-  store: string;
+  vendor: {
+    id: string
+    name: string
+    slug: string
+  };
   link: string;
   price: {
     regular: number;

@@ -16,7 +16,7 @@ export const Avatar: FC<AvatarProps> = ({ image }): JSX.Element => {
           src={image.src}
           fill
           alt={image?.alt || ''}
-          sizes='(max-width: 200px) 100vw, (max-width: 100px) 50vw, 33vw"'
+          sizes='(max-width: 100px) 100vw, (max-width: 750px) 50vw, 33vw"'
         />
       </figure>
     </div>
