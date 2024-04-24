@@ -17,10 +17,6 @@ export const getVendors = async (): Promise<IPromise> => {
     }
 };
 
-export const getSingleVendor = async (id: string): Promise<IVendor | undefined> => {
-    const apiData = await getVendors()
-    return apiData.data.find((vendor) => vendor.id === id);
-};
 
 export const getVendorBySlug = async (slug: string): Promise<IVendor | undefined> => {
     const apiData = await getVendors()
