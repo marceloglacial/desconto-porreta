@@ -10,8 +10,8 @@ const Produto = async ({ params }: { params: { id: string } }) => {
 
   if (data.status === 'error') return <h2>{productMessages.error.message}</h2>;
 
-  const { title, image, price, link, description } = product;
-  // const vendor = await getSingleVendor(product.vendor.id)
+  const { title, image, price, link, description, vendor_info } = product;
+  const vendor = vendor_info[0]
 
   return (
     <div className={ui.layout.productpage.container}>
@@ -32,7 +32,7 @@ const Produto = async ({ params }: { params: { id: string } }) => {
             {description}
           </div>
           <div className={ui.layout.productpage.vendor}>
-            {/* <p><Link href={`/loja/${vendor?.slug}`}>vendido por: {vendor?.name}</Link></p> */}
+            <p><Link href={`/loja/${vendor.slug}`}>vendido por: {vendor.title}</Link></p>
           </div>
           <div className={ui.layout.productpage.priceContainer}>
             {price?.discount && (
