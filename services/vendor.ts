@@ -20,5 +20,5 @@ export const getVendors = async (): Promise<IPromise> => {
 
 export const getVendorBySlug = async (slug: string): Promise<IVendor | undefined> => {
     const apiData = await getVendors()
-    return apiData.data.find((vendor) => vendor.slug === slug);
+    return apiData.data.find((vendor: IVendor) => vendor.slug === slug);
 };
