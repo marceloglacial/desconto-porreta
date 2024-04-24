@@ -5,17 +5,19 @@ import { getCurrency, getDiscount } from '@/services';
 import Link from 'next/link';
 
 export const Card: FC<IProduct> = ({
-  id,
+  _id,
   title,
-  vendor,
+  vendor_info,
   price,
   image,
   link,
 }): JSX.Element => {
+  const vendor = vendor_info[0]
+
   return (
     <div className={ui.card.container}>
       <div className={ui.card.image}>
-        <Link href={`/produto/${id}`}>
+        <Link href={`/produto/${_id}`}>
           <figure className={ui.card.figure}>
             <Image
               className={ui.card.image}
@@ -30,13 +32,13 @@ export const Card: FC<IProduct> = ({
       </div>
       <div className={ui.card.body}>
         <div className={ui.card.title}>
-          <Link href={`/produto/${id}`}>
+          <Link href={`/produto/${_id}`}>
             <h2>{title}</h2>
           </Link>
         </div>
-        <Link href={`/produto/${id}`}>
+        <Link href={`/produto/${_id}`}>
           <div className={ui.card.store}>
-            <p>vendido por: {vendor.name}</p>
+            <p>vendido por: {vendor.title}</p>
           </div>
           <div className={ui.card.price.container}>
             {price?.discount && (
