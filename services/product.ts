@@ -1,61 +1,34 @@
-import { productMessages } from '@/constants';
-
-interface IgetProducts {
-  data: IProduct[],
-  meta: Object
-}
-
-const formatProduct = (product: ApiProduct): IProduct => {
-  const { _id, title, link, price, vendor_info, image } = product;
-  const vendorInfo = vendor_info[0]
-
-  return {
-    id: _id,
-    title,
-    link,
-    description: title,
-    image: {
-      src: image.src,
-      alt: image.alt || title,
-      width: image.width || 300,
-      height: image.height || 300
-    },
-    vendor: {
-      id: vendorInfo._id,
-      name: vendorInfo.title,
-      slug: vendorInfo.slug,
-    },
-    price: {
-      regular: price.regular,
-      discount: price.discount || undefined,
-    },
-  };
-}
-
-export const getProducts = async (): Promise<IgetProducts> => {
-  const res = await fetch(`${process.env.API_URL}/api/products`, { next: { revalidate: 5 } })
-  if (!res.ok) {
-    throw new Error(productMessages.error.message)
+export const getProducts = async (): Promise<IPromise> => {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/products`, { next: { revalidate: 5 } })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    return {
+      data: null,
+      message: `Erro ao carregar os produtos. ${e}`,
+      status: 'error'
+    }
   }
-  const apiData = await res.json()
-  const result = {
-    data: apiData.map((item: ApiProduct) => formatProduct(item)),
-    meta: apiData?.meta
-  }
-  return result
 };
 
-export const getSingleProduct = async (id: string): Promise<IProduct | undefined> => {
-  const apiData = await getProducts()
-  return (
-    apiData.data.find((product) => product.id === id) ||
-    undefined
-  );
+export const getSingleProduct = async (id: string): Promise<IPromise> => {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/products/${id}`, { next: { revalidate: 5 } })
+    const data = await res.json()
+    return data
+  } catch (e) {
+    return {
+      data: null,
+      message: `Erro ao carregar o produto. ${e}`,
+      status: 'error'
+    }
+  }
 };
 
 export const getProductsByVendor = async (id: string) => {
-  const apiData = await getProducts()
-  return apiData.data.filter((product) => product.vendor.id === id);
+  const data = await getProducts()
+  return data.data.filter((product: IProduct) => product.vendor === id);
 };
 
 export function getDiscount(regularPrice: number, finalPrice: number): number {

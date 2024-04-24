@@ -1,5 +1,5 @@
 interface IProduct {
-  id: string;
+  _id: string;
   title: string;
   description?: string;
   image: {
@@ -8,14 +8,23 @@ interface IProduct {
     width: number;
     height: number;
   };
-  vendor: {
-    id: string
-    name: string
-    slug: string
-  };
+  vendor: string
+  vendor_info: VendorInfoType[];
   link: string;
   price: {
     regular: number;
     discount?: number;
   };
+}
+
+type VendorInfoType = {
+  _id: string
+  title: string
+  slug: string
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  }
 }
