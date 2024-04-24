@@ -1,5 +1,5 @@
 import { productMessages } from '@/constants';
-import { getCurrency, getDiscount, getSingleProduct, getSingleVendor } from '@/services';
+import { getCurrency, getDiscount, getSingleProduct } from '@/services';
 import ui from '@/ui';
 import Image from 'next/image';
 import Link from 'next/link';
