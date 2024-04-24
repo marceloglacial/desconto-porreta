@@ -1,8 +1,8 @@
 interface IVendor {
-    id: string
-    name: string
+    _id: string
+    title: string
     slug: string
-    logo: {
+    image: {
         src: string;
         alt: string;
         width: number;

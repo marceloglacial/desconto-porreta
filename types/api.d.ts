@@ -27,3 +27,9 @@ interface ApiVendor {
     slug: string;
     logo: string;
 }
+
+interface IPromise {
+    data: any
+    message: string
+    status: 'success' | 'loading' | 'error'
+}
