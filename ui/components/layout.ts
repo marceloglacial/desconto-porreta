@@ -2,14 +2,14 @@ const layout = {
   container: `layout__container bg-white`,
   main: `layout__main flex min-h-screen flex-col gap-4  pt-20 max-w-screen-xl mx-auto`,
   homePage: {
-    container: 'home__container',
-    stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4',
+    container: 'home__container grid gap-4',
+    stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4 pb-2',
     content: 'home__content px-4 flex flex-col gap-4',
     products: 'home__products grid grid-cols-2 lg:grid-cols-5 gap-4'
   },
   productpage: {
     container: 'product__container px-4 pb-8 flex flex-col gap-4',
-    title: 'product__title text-2xl font-bold',
+    title: 'product__title text-2xl md:text-4xl font-bold',
     info: 'product__info grid md:grid-flow-col md:auto-cols-auto gap-8',
     figure:
       'product__figure card__figure relative h-96 aspect-square overflow-hidden bg-white border-2 rounded-lg shadow-xl',
