@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ui from '@/ui';
 import { getCurrency, getDiscount } from '@/services';
 import Link from 'next/link';
+import { productMessages } from '@/constants';
 
 export const Card: FC<IProduct> = ({
   _id,
@@ -62,7 +63,7 @@ export const Card: FC<IProduct> = ({
             target='_blank'
             className={ui.button.primary}
           >
-            Ir para a loja!
+            {productMessages.ctaButton}
           </Link>
         </div>
       </div>

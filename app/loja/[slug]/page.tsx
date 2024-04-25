@@ -14,8 +14,8 @@ const Loja = async ({ params }: { params: { slug: string } }) => {
   return (
     <section className={ui.layout.storePage.container}>
       <div className={ui.layout.storePage.branding}>
-        <Avatar image={{ src: image.src, alt: title }} />{' '}
-        <h1 className=''>{title}</h1>
+        <Avatar image={{ src: image.src, alt: title }} />
+        <h1 className='text-2xl'>{title}</h1>
       </div>
       <div className={ui.layout.storePage.products}>
         {!products.length && <div>{productMessages.emptyList}</div>}
