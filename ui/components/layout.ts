@@ -10,7 +10,7 @@ const layout = {
   productpage: {
     container: 'product__container px-4 pb-8 flex flex-col gap-4',
     title: 'product__title text-2xl font-bold',
-    info: 'product__info grid grid-flow-col auto-cols-auto gap-8',
+    info: 'product__info grid md:grid-flow-col md:auto-cols-auto gap-8',
     figure:
       'product__figure card__figure relative h-96 aspect-square overflow-hidden bg-white border-2 rounded-lg shadow-xl',
     image: 'product__image object-contain overflow-hidden',
