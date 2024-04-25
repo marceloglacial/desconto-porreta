@@ -23,8 +23,10 @@ export default async function Home() {
           );
         })}
       </div>
-      <div className={ui.layout.homePage.content}>
+      {/* <div>
         <SearchBar />
+      </div> */}
+      <div className={ui.layout.homePage.content}>
         <div className={ui.layout.homePage.products}>
           {!allProducts.length && <div>{productMessages.emptyList}</div>}
           {allProducts?.map((product) => {
