@@ -1,8 +1,25 @@
 import { productMessages } from '@/constants';
-import { getCurrency, getDiscount, getSingleProduct } from '@/services';
+import { getCurrency, getDiscount, getSingleProduct, getSiteInfo } from '@/services';
 import ui from '@/ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+type Props = {
+  params: { id: string };
+};
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const siteInfo = getSiteInfo()
+  const data = await getSingleProduct(params.id);
+  const product: IProduct = data.data
+  return {
+    title: `${product.title} - ${siteInfo.title}`,
+    description: product.description,
+  };
+}
 
 const Produto = async ({ params }: { params: { id: string } }) => {
   const data = await getSingleProduct(params.id);
