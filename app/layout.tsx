@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { NavBar, NavbarProps } from '@/components';
 import { getSiteInfo } from '@/services';
 import ui from '@/ui';
+import GoogleAnalytics from '@/components/google-analytics/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 const siteInfo = getSiteInfo();
@@ -27,6 +28,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id=
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <header>
           <NavBar {...navbarProps} />
         </header>
