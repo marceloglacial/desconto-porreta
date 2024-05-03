@@ -18,8 +18,31 @@ export async function generateMetadata({
   return {
     title: `${product.title} - ${siteInfo.title}`,
     description: product.description,
+    openGraph: {
+      title: product.title,
+      description: product.description,
+      url: `${siteInfo.url}/produto/${params.id}`,
+      siteName: siteInfo.title,
+      images: [
+        {
+          url: '/api/og?title=Next.js', // Dynamic og route
+          width: 800,
+          height: 600,
+        },
+        {
+          url: '/api/og?title=Next.js', // Dynamic og route
+          width: 1800,
+          height: 1600,
+          alt: `Foto ilustrativa do produto`,
+        },
+      ],
+      locale: 'pt_BR',
+      type: 'website',
+    },
   };
 }
+
+
 
 const Produto = async ({ params }: { params: { id: string } }) => {
   const data = await getSingleProduct(params.id);
