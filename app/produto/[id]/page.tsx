@@ -25,12 +25,12 @@ export async function generateMetadata({
       siteName: siteInfo.title,
       images: [
         {
-          url: '/api/og?title=Next.js', // Dynamic og route
+          url: product.image.src,
           width: 800,
           height: 600,
         },
         {
-          url: '/api/og?title=Next.js', // Dynamic og route
+          url: product.image.src, // Dynamic og route
           width: 1800,
           height: 1600,
           alt: `Foto ilustrativa do produto`,
