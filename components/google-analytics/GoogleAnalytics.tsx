@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
+export const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
     <>
         <Script
             async
@@ -21,4 +21,3 @@ const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
         ></Script>
     </>
 );
-export default GoogleAnalytics;

@@ -1,6 +1,7 @@
 const layout = {
-  container: `layout__container bg-white`,
-  main: `layout__main flex min-h-screen flex-col gap-4  pt-20 max-w-screen-xl mx-auto`,
+  container: `layout__container bg-brand-background min-h-screen`,
+  main: `layout__main flex flex-col gap-4 pt-[150px] max-w-screen-xl mx-auto`,
+  footer: `layout__footer flex flex-col gap-4 max-w-screen-xl mx-auto p-4 pt-16 text-sm`,
   homePage: {
     container: 'home__container grid gap-4',
     stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4 pb-2',
@@ -16,7 +17,7 @@ const layout = {
     image: 'product__image object-contain overflow-hidden',
     description:
       'pdoruct__description flex flex-col justify-center gap-4 flex-grow',
-    vendor: 'product__vendor text-lg text-blue-600',
+    vendor: 'product__vendor text-lg text-slate-600',
     priceContainer: 'product__price flex flex-col pt-2 gap-4 font-bold',
     discount: 'product__price--discount text-red-600 line-through',
     discountBadge:
