@@ -2,6 +2,6 @@ export const productMessages = {
   error: {
     message: 'Produto não encontrado',
   },
-  ctaButton: 'Resgatar desconto!',
+  ctaButton: 'Resgatar desconto',
   emptyList: 'Nenhum produto encontrado.'
 };

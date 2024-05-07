@@ -43,7 +43,7 @@ export const Card: FC<IProduct> = ({
           </div>
           <div className={ui.card.price.container}>
             {price?.discount && (
-              <div>
+              <div className={ui.card.price.highlight}>
                 <span className={ui.card.price.regular}>
                   {getCurrency(price.regular)}
                 </span>
