@@ -15,12 +15,13 @@ export async function generateMetadata({
   const siteInfo = getSiteInfo()
   const data = await getSingleProduct(params.id);
   const product: IProduct = data.data
+  const description: string = `${product.title}: De ${getCurrency(product.price.regular)} por ${getCurrency(product.price.discount)}`
   return {
     title: `${product.title} - ${siteInfo.title}`,
     description: product.description,
     openGraph: {
       title: product.title,
-      description: product.description,
+      description: description,
       url: `${siteInfo.url}/produto/${params.id}`,
       siteName: siteInfo.title,
       images: [
