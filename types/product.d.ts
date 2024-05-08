@@ -13,7 +13,7 @@ interface IProduct {
   link: string;
   price: {
     regular: number;
-    discount?: number;
+    discount: number;
   };
 }
 
