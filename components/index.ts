@@ -5,3 +5,6 @@ export * from './google-analytics/GoogleAnalytics';
 export * from './logo/Logo';
 export * from './navbar/Navbar';
 export * from './searchbar/SearchBar';
+export * from './icon/Icon'
+export * from './tooltip/Tooltip'
+export * from './social-bar/SocialBar'
