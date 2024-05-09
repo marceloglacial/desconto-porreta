@@ -9,7 +9,7 @@ export const SocialBar = async (): Promise<JSX.Element> => {
     return <div className='socialbar flex flex-wrap items-center gap-2 sm:gap-4'>
         {socialItems.data.map((item: SocialItemType, index: number) => {
             return <Tooltip text={item.title} key={index}>
-                <Link href={item.link} target='_blank' ><Icon icon={item.icon} size={item.size} /></Link>
+                <Link href={`/${item.icon}`} target='_blank' ><Icon icon={item.icon} size={item.size} /></Link>
             </Tooltip>
         })}
     </div>
