@@ -1,7 +1,7 @@
 const layout = {
   container: `layout__container bg-brand-background min-h-screen`,
   main: `layout__main flex flex-col gap-4 max-w-screen-xl mx-auto max-[400px]:p-4 p-6 max-[400px]:pt-[120px] pt-[120px] md:pt-[150px] `,
-  footer: `layout__footer flex flex-col gap-4 max-w-screen-xl mx-auto pt-8 text-sm p-6`,
+  footer: `layout__footer flex flex-col gap-6 max-w-screen-xl mx-auto pt-8 text-sm p-6`,
   homePage: {
     container: 'home__container grid gap-4',
     stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4 pb-2',

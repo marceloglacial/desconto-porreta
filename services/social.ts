@@ -6,12 +6,12 @@ export type SocialItemType = {
 } & IconProps
 
 export const getSocial = async (): Promise<IPromise> => {
-    const iconSize = 32
+    const iconSize = 24
     const items: SocialItemType[] = [
         {
             icon: 'whatsapp',
             size: iconSize,
-            link: 'https://chat.whatsapp.com/LVHomJzXEmXH0cfJRpC441',
+            link: 'https://chat.whatsapp.com/GIv7R1QG8lqEgrboOxZ71W',
             title: 'Participe to nosso grupo do WhatsApp'
         },
         {
