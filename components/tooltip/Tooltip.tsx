@@ -1,14 +1,14 @@
 'use client'
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 interface TooltipProps {
-    text: string;
-    children: React.ReactNode;
+    text: string
+    children: React.ReactNode
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({ text, children }) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false)
 
     return (
         <div className=' relative inline-block'>
@@ -24,5 +24,5 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, children }) => {
                 {children}
             </div>
         </div>
-    );
-};
+    )
+}

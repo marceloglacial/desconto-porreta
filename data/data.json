@@ -1,9 +1,9 @@
 {
-  "site": {
-    "title": "Desconto Porreta",
-    "description": "Melhores descontos!",
-    "url": "https://descontoporreta.com.br",
-    "logo": "https://res.cloudinary.com/dw2wjwhuv/image/upload/v1715044035/s6rbxjaxcwqe96dj9ais.png",
-    "openGraph": "https://res.cloudinary.com/dw2wjwhuv/image/upload/v1715103605/g42xtid4mdz6ptzoyasf.png"
-  }
+    "site": {
+        "title": "Desconto Porreta",
+        "description": "Melhores descontos!",
+        "url": "https://descontoporreta.com.br",
+        "logo": "https://res.cloudinary.com/dw2wjwhuv/image/upload/v1715044035/s6rbxjaxcwqe96dj9ais.png",
+        "openGraph": "https://res.cloudinary.com/dw2wjwhuv/image/upload/v1715103605/g42xtid4mdz6ptzoyasf.png"
+    }
 }

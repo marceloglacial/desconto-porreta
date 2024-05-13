@@ -3,9 +3,9 @@ interface IVendor {
     title: string
     slug: string
     image: {
-        src: string;
-        alt: string;
-        width: number;
-        height: number;
+        src: string
+        alt: string
+        width: number
+        height: number
     }
 }
