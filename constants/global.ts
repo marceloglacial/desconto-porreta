@@ -1,5 +1,5 @@
 export const global = {
-  redirect: {
-    time: 3000,
-  },
-};
+    redirect: {
+        time: 3000,
+    },
+}

@@ -1,7 +1,7 @@
-import { IconProps } from '@/components';
+import { IconProps } from '@/components'
 
 export type SocialItemType = {
-    link: string,
+    link: string
     title: string
 } & IconProps
 
@@ -10,32 +10,32 @@ export const getSocial = async (): Promise<IPromise> => {
         {
             icon: 'whatsapp',
             link: 'https://chat.whatsapp.com/GIv7R1QG8lqEgrboOxZ71W',
-            title: 'Participe to nosso grupo do WhatsApp'
+            title: 'Participe to nosso grupo do WhatsApp',
         },
         {
             icon: 'tiktok',
             link: 'https://www.tiktok.com/@descontoporreta',
-            title: 'Acesse o nosso tiktok'
+            title: 'Acesse o nosso tiktok',
         },
         {
             icon: 'instagram',
             link: 'https://www.instagram.com/descontoporreta',
-            title: 'Acesse o nosso Instagram'
+            title: 'Acesse o nosso Instagram',
         },
         {
             icon: 'twitter',
             link: 'https://twitter.com/DescontoPorreta',
-            title: 'Acesse o nosso Twitter / X'
+            title: 'Acesse o nosso Twitter / X',
         },
         {
             icon: 'email',
             link: 'mailto:contato@descontoporreta.com.br',
-            title: 'Entre em contato por e-mail'
-        }
+            title: 'Entre em contato por e-mail',
+        },
     ]
     return {
         data: items,
         message: `Sucesso`,
-        status: 'success'
-    };
-};
+        status: 'success',
+    }
+}

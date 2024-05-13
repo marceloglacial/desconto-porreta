@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script'
 
 export const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
     <>
@@ -8,7 +8,7 @@ export const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
       id=${ga_id}`}
         ></Script>
         <Script
-            id="google-analytics"
+            id='google-analytics'
             dangerouslySetInnerHTML={{
                 __html: `
           window.dataLayer = window.dataLayer || [];
@@ -20,4 +20,4 @@ export const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
             }}
         ></Script>
     </>
-);
+)

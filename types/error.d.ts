@@ -1,6 +1,6 @@
 interface IError {
-  error: {
-    status?: 'error';
-    message: string;
-  };
+    error: {
+        status?: 'error'
+        message: string
+    }
 }
