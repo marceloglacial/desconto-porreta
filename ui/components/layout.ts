@@ -11,10 +11,11 @@ const layout = {
     productpage: {
         container: 'product__container flex flex-col gap-4',
         title: 'product__title text-2xl md:text-4xl font-bold',
-        info: 'product__info grid md:grid-flow-col md:auto-cols-auto gap-8',
-        figure: 'product__figure card__figure relative aspect-square overflow-hidden bg-white border-2 rounded-lg shadow-xl',
+        info: 'product__info grid gap-8 lg:flex',
+        figure: 'product__figure card__figure relative overflow-hidden bg-white border-2 rounded-lg shadow-xl w-full sm:w-96 h-96 lg:shrink-0 mx-auto lg:mx-0',
         image: 'product__image object-contain w-full h-full overflow-hidden p-4',
-        description: 'pdoruct__description flex flex-col justify-center gap-4 flex-grow',
+        description:
+            'product__description flex flex-col justify-center gap-4 flex-grow grid-span-2',
         vendor: 'product__vendor text-lg text-slate-600',
         priceContainer: 'product__price flex flex-col pt-2 gap-4 font-bold',
         discount: 'product__price--discount text-red-600 line-through',
