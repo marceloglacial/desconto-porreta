@@ -1,6 +1,6 @@
 export const getProducts = async (): Promise<IPromise> => {
     try {
-        const res = await fetch(`${process.env.API_URL}/api/products`, {
+        const res = await fetch(`${process.env.API_URL}/api/products?limit=100`, {
             next: { revalidate: 5 },
         })
         const data = await res.json()
