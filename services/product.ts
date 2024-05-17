@@ -1,6 +1,11 @@
-export const getProducts = async (): Promise<IPromise> => {
+interface GetProductsProps {
+    search?: string
+}
+
+export const getProducts = async ({ search = '' }: GetProductsProps = {}): Promise<IPromise> => {
     try {
-        const res = await fetch(`${process.env.API_URL}/api/products?limit=100`, {
+        const searchParam = search ? `&search=${encodeURIComponent(search)}` : ''
+        const res = await fetch(`${process.env.API_URL}/api/products?limit=100${searchParam}`, {
             next: { revalidate: 5 },
         })
         const data = await res.json()
