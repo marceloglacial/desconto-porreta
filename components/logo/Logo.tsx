@@ -1,11 +1,10 @@
 import { getSiteInfo } from '@/services'
-import ui from '@/ui'
 import Image from 'next/image'
 
 export const Logo = async () => {
     const siteInfo = await getSiteInfo()
     return (
-        <div className={ui.logo.container}>
+        <div className='logo relative w-[187px] h-[50px] lg:w-[264px] lg:h-[85px]'>
             <Image
                 src={siteInfo.logo}
                 alt={'desconto porreta logo'}

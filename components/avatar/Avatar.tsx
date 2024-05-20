@@ -1,4 +1,3 @@
-import ui from '@/ui'
 import Image, { ImageProps } from 'next/image'
 import { FC } from 'react'
 
@@ -8,11 +7,11 @@ export interface AvatarProps {
 
 export const Avatar: FC<AvatarProps> = ({ image }): JSX.Element => {
     return (
-        <div className={ui.avatar.container}>
-            <figure className={ui.avatar.figure}>
+        <div className='avatar__container w-24 aspect-square rounded-full bg-slate-200 overflow-hidden flex items-center justify-center'>
+            <figure className='avatar__figure relative w-16 h-16'>
                 <Image
                     {...image}
-                    className={ui.avatar.image}
+                    className='avatar__image object-contain'
                     src={image.src}
                     fill
                     alt={image?.alt || ''}

@@ -6,7 +6,8 @@ const layout = {
         container: 'home__container grid gap-4',
         stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4 pb-2',
         content: 'home__content flex flex-col gap-4',
-        products: 'home__products grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4',
+        products:
+            'home__products grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4',
     },
     productpage: {
         container: 'product__container flex flex-col gap-4',

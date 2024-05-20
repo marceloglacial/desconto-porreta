@@ -4,6 +4,7 @@ import ui from '@/ui'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { Button } from '@/components'
 
 type Props = {
     params: { id: string }
@@ -87,13 +88,7 @@ const Produto = async ({ params }: { params: { id: string } }) => {
                         </span>
                     </div>
                     <div className={ui.layout.productpage.button}>
-                        <Link
-                            href={`/redirect?url=${link}`}
-                            target='_blank'
-                            className={ui.button.primary}
-                        >
-                            {productMessages.ctaButton}
-                        </Link>
+                        <Button href={`/redirect?url=${link}`}>{productMessages.ctaButton}</Button>
                     </div>
                 </div>
             </div>
