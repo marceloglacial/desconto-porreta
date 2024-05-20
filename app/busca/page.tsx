@@ -1,4 +1,4 @@
-import { Card, SearchBar } from '@/components'
+import { Card } from '@/components'
 import { productMessages } from '@/constants'
 import { getProducts, sanitizeQuery } from '@/services'
 import ui from '@/ui'
@@ -16,7 +16,6 @@ export default async function SearchResults({
     return (
         <div className={ui.layout.homePage.container}>
             <div className={ui.layout.homePage.content}>
-                <SearchBar />
                 <h2 className=' text-4xl font-bold'>
                     Resultados da busca por:
                     <span className=' text-red-600 pl-2'>{query}</span>

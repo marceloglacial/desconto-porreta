@@ -1,12 +1,12 @@
 const layout = {
     container: `layout__container bg-brand-background min-h-screen`,
-    main: `layout__main flex flex-col gap-4 max-w-screen-xl mx-auto max-[400px]:p-4 p-6 max-[400px]:pt-[120px] pt-[120px] md:pt-[150px] `,
+    main: `layout__main flex flex-col gap-4 max-w-screen-xl mx-auto max-[400px]:p-4 p-6 max-[400px]:pt-[64px] pt-16 sm:pt-0`,
     footer: `layout__footer flex flex-col gap-6 max-w-screen-xl mx-auto pt-8 text-sm p-6`,
     homePage: {
         container: 'home__container grid gap-4',
         stores: 'home__stores w-full overflow-x-auto flex flex-nowrap gap-4 px-4 pl-4 pb-2',
         content: 'home__content flex flex-col gap-4',
-        products: 'home__products grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4',
+        products: 'home__products grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4',
     },
     productpage: {
         container: 'product__container flex flex-col gap-4',

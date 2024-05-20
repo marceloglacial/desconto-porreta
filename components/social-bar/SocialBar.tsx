@@ -7,7 +7,7 @@ export const SocialBar = async (): Promise<JSX.Element> => {
     const socialItems = await getSocial()
 
     return (
-        <div className='socialbar flex flex-wrap items-center gap-2 sm:gap-4'>
+        <div className='socialbar flex flex-nowrap items-center gap-2 sm:gap-4'>
             {socialItems.data.map((item: SocialItemType, index: number) => {
                 return (
                     <Tooltip text={item.title} key={index}>

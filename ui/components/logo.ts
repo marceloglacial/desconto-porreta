@@ -1,4 +1,4 @@
 const logo = {
-    container: `relative w-[187px] h-[50px] md:w-[364px] md:h-[95px]`,
+    container: `relative w-[187px] h-[50px] lg:w-[264px] lg:h-[85px]`,
 }
 export default logo

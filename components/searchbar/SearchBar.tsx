@@ -1,5 +1,4 @@
 'use client'
-import ui from '@/ui'
 import { ChangeEvent, FC, FormEvent, useState } from 'react'
 import { Icon } from '@/components'
 import { useRouter } from 'next/navigation'
@@ -15,11 +14,11 @@ export const SearchBar: FC = (): JSX.Element => {
         router.push(`/busca?search=${searchTerm}`)
     }
     return (
-        <div className={ui.searchbar.container}>
+        <div className='searchbar w-full absolute sm:static -bottom-16 left-0 bg-brand-background max-[400px]:px-4 px-6 py-4'>
             <form onSubmit={handleSubmit} className='searchbar__form relative'>
                 <input
                     type='search'
-                    className={ui.searchbar.input}
+                    className='searchbar__input border border-slate-300 shadow-sm rounded-xl py-2 px-4 pl-10 relative placeholder-black bg-white w-full'
                     placeholder='buscar produto'
                     onChange={handleChange}
                 />

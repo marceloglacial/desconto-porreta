@@ -1,4 +1,4 @@
-import { Card, SearchBar } from '@/components'
+import { Card } from '@/components'
 import { productMessages } from '@/constants'
 import { getProducts } from '@/services'
 import ui from '@/ui'
@@ -10,7 +10,6 @@ export default async function Home() {
     return (
         <div className={ui.layout.homePage.container}>
             <div className={ui.layout.homePage.content}>
-                <SearchBar />
                 <div className={ui.layout.homePage.products}>
                     {!allProducts.length && <div>{productMessages.emptyList}</div>}
                     {allProducts?.map((product) => {
