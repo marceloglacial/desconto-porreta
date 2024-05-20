@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { getCurrency, getDiscount } from '@/services'
 import Link from 'next/link'
 import { productMessages } from '@/constants'
-import { Button } from '../button/Button'
+import { Badge, Button, Text } from '@/components'
 
 export const Card: FC<IProduct> = ({
     _id,
@@ -32,9 +32,9 @@ export const Card: FC<IProduct> = ({
                 </Link>
             </div>
             <div className='card__body p-4 flex flex-col gap-2'>
-                <div className='card__title font-bold line-clamp-3 md:line-clamp-2'>
+                <div className='card__title line-clamp-3 md:line-clamp-2'>
                     <Link href={`/produto/${_id}`}>
-                        <h2>{title}</h2>
+                        <Text variant='h3'>{title}</Text>
                     </Link>
                 </div>
                 <Link href={`/produto/${_id}`}>
@@ -47,9 +47,9 @@ export const Card: FC<IProduct> = ({
                                 <span className='card__price--regular text-xs text-lime-600 line-through'>
                                     {getCurrency(price.regular)}
                                 </span>
-                                <span className='card__price--off text-[10px] md:text-xs text-white bg-green-600 p-1 rounded'>
+                                <Badge>
                                     {getDiscount(price.regular, price?.discount || 0)}% off
-                                </span>
+                                </Badge>
                             </div>
                         )}
                         <span className='card__price--discount text-xl'>

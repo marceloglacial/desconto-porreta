@@ -1,10 +1,9 @@
 import { productMessages } from '@/constants'
 import { getCurrency, getDiscount, getSingleProduct, getSiteInfo } from '@/services'
-import ui from '@/ui'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { Button } from '@/components'
+import { Badge, Button, Text } from '@/components'
 
 type Props = {
     params: { id: string }
@@ -52,12 +51,12 @@ const Produto = async ({ params }: { params: { id: string } }) => {
     const vendor = vendor_info[0]
 
     return (
-        <div className={ui.layout.productpage.container}>
-            <h1 className={ui.layout.productpage.title}>{title}</h1>
-            <div className={ui.layout.productpage.info}>
-                <figure className={ui.layout.productpage.figure}>
+        <div className='product__container flex flex-col gap-4'>
+            <Text variant='h1'>{title}</Text>
+            <div className='product__info grid gap-8 lg:flex'>
+                <figure className='product__figure card__figure relative overflow-hidden bg-white border-2 rounded-lg shadow-xl w-full sm:w-96 h-96 lg:shrink-0 mx-auto lg:mx-0'>
                     <Image
-                        className={ui.layout.productpage.image}
+                        className='product__image object-contain w-full h-full overflow-hidden p-4'
                         src={image.src}
                         fill
                         alt={image?.alt || ''}
@@ -65,29 +64,29 @@ const Produto = async ({ params }: { params: { id: string } }) => {
                         priority
                     />
                 </figure>
-                <div className={ui.layout.productpage.description}>
+                <div className='product__description flex flex-col justify-center gap-4 flex-grow grid-span-2'>
                     <div>{description}</div>
-                    <div className={ui.layout.productpage.vendor}>
-                        <p>
+                    <div className='product__vendor text-lg text-slate-600'>
+                        <Text>
                             <Link href={`/loja/${vendor.slug}`}>vendido por: {vendor.title}</Link>
-                        </p>
+                        </Text>
                     </div>
-                    <div className={ui.layout.productpage.priceContainer}>
+                    <div className='product__price flex flex-col pt-2 gap-4 font-bold'>
                         {price?.discount && (
-                            <div>
-                                <span className={ui.layout.productpage.discount}>
+                            <div className='flex gap-2'>
+                                <span className='product__price--discount text-green-600 line-through'>
                                     {getCurrency(price.regular)}
                                 </span>
-                                <span className={ui.layout.productpage.discountBadge}>
+                                <Badge>
                                     {getDiscount(price.regular, price?.discount || 0)}% off
-                                </span>
+                                </Badge>
                             </div>
                         )}
-                        <span className={ui.layout.productpage.price}>
+                        <span className='product__price--regular text-5xl font-bold'>
                             {getCurrency(price.discount || price.regular)}
                         </span>
                     </div>
-                    <div className={ui.layout.productpage.button}>
+                    <div className='product__price--button lg:max-w-xs'>
                         <Button href={`/redirect?url=${link}`}>{productMessages.ctaButton}</Button>
                     </div>
                 </div>
