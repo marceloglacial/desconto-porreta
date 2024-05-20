@@ -1,7 +1,6 @@
-import { Avatar, Card } from '@/components'
-import { productMessages, vendorMessages } from '@/constants'
+import { Avatar, ProductList, Text } from '@/components'
+import { vendorMessages } from '@/constants'
 import { getProductsByVendor, getVendorBySlug } from '@/services'
-import ui from '@/ui'
 
 const Loja = async ({ params }: { params: { slug: string } }) => {
     const vendor = await getVendorBySlug(params.slug)
@@ -12,18 +11,13 @@ const Loja = async ({ params }: { params: { slug: string } }) => {
     const { image, title } = vendor
 
     return (
-        <section className={ui.layout.storePage.container}>
-            <div className={ui.layout.storePage.branding}>
+        <>
+            <div className='page__header flex gap-4 text-4xl items-center font-bold'>
                 <Avatar image={{ src: image.src, alt: title }} />
-                <h1 className='text-2xl'>{title}</h1>
+                <Text variant='h1'>{title}</Text>
             </div>
-            <div className={ui.layout.storePage.products}>
-                {!products.length && <div>{productMessages.emptyList}</div>}
-                {products.map((product: IProduct) => {
-                    return <Card key={product._id} {...product} />
-                })}
-            </div>
-        </section>
+            <ProductList products={products} />
+        </>
     )
 }
 export default Loja

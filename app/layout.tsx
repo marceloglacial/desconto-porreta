@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Footer, NavBar, NavbarProps, GoogleAnalytics } from '@/components'
 import { getSiteInfo } from '@/services'
-import ui from '@/ui'
 
 const inter = Inter({ subsets: ['latin'] })
 const siteInfo = getSiteInfo()
@@ -49,11 +48,13 @@ export default function RootLayout({
                 {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
                     <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
                 ) : null}
-                <div className={ui.layout.container}>
+                <div className='layout__container bg-brand-background min-h-screen'>
                     <header>
                         <NavBar {...navbarProps} />
                     </header>
-                    <main className={ui.layout.main}>{children}</main>
+                    <main className='layout__main flex flex-col gap-4 max-w-screen-xl mx-auto max-[400px]:p-4 p-6 max-[400px]:pt-[64px] pt-16 sm:pt-0'>
+                        {children}
+                    </main>
                     <Footer />
                 </div>
             </body>

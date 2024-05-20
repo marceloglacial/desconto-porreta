@@ -1,10 +1,9 @@
-import ui from '@/ui'
 import { FC } from 'react'
-import { SocialBar } from '../social-bar/SocialBar'
+import { SocialBar } from '@/components'
 
 export const Footer: FC = () => {
     return (
-        <div className={ui.layout.footer}>
+        <div className='layout__footer flex flex-col gap-6 max-w-screen-xl mx-auto pt-8 text-sm p-6'>
             <div className='flex justify-center sm:hidden'>
                 <SocialBar />
             </div>

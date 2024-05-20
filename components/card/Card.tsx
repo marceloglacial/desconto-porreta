@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import Image from 'next/image'
-import ui from '@/ui'
 import { getCurrency, getDiscount } from '@/services'
 import Link from 'next/link'
 import { productMessages } from '@/constants'
+import { Badge, Button, Text } from '@/components'
 
 export const Card: FC<IProduct> = ({
     _id,
@@ -16,12 +16,12 @@ export const Card: FC<IProduct> = ({
     const vendor = vendor_info[0]
 
     return (
-        <div className={ui.card.container}>
-            <div className={ui.card.image}>
+        <div className='card rounded-xl overflow-hidden border border-slate-300 shadow-xl bg-white'>
+            <div className='card__image object-contain overflow-hidden p-4  max-h-24 md:max-h-full'>
                 <Link href={`/produto/${_id}`}>
-                    <figure className={ui.card.figure}>
+                    <figure className='card__figure relative w-full aspect-square overflow-hidden bg-white'>
                         <Image
-                            className={ui.card.image}
+                            className='card__image object-contain overflow-hidden p-4  max-h-24 md:max-h-full'
                             src={image.src}
                             fill
                             alt={image?.alt || ''}
@@ -31,40 +31,34 @@ export const Card: FC<IProduct> = ({
                     </figure>
                 </Link>
             </div>
-            <div className={ui.card.body}>
-                <div className={ui.card.title}>
+            <div className='card__body p-4 flex flex-col gap-2'>
+                <div className='card__title line-clamp-3 md:line-clamp-2'>
                     <Link href={`/produto/${_id}`}>
-                        <h2>{title}</h2>
+                        <Text variant='h3'>{title}</Text>
                     </Link>
                 </div>
                 <Link href={`/produto/${_id}`}>
-                    <div className={ui.card.store}>
+                    <div className='card__store text-xs text-slate-600 hidden md:block'>
                         <p>vendido por: {vendor.title}</p>
                     </div>
-                    <div className={ui.card.price.container}>
+                    <div className='card__price flex flex-col pt-2 font-bold'>
                         {price?.discount && (
-                            <div className={ui.card.price.highlight}>
-                                <span className={ui.card.price.regular}>
+                            <div className='card_highlight flex flex-wrap gap-2 items-center'>
+                                <span className='card__price--regular text-xs text-lime-600 line-through'>
                                     {getCurrency(price.regular)}
                                 </span>
-                                <span className={ui.card.price.percentageOff}>
+                                <Badge>
                                     {getDiscount(price.regular, price?.discount || 0)}% off
-                                </span>
+                                </Badge>
                             </div>
                         )}
-                        <span className={ui.card.price.discount}>
+                        <span className='card__price--discount text-xl'>
                             {getCurrency(price.discount || price.regular)}
                         </span>
                     </div>
                 </Link>
-                <div className={ui.card.actions.container}>
-                    <Link
-                        href={`/redirect?url=${link}`}
-                        target='_blank'
-                        className={ui.button.primary}
-                    >
-                        {productMessages.ctaButton}
-                    </Link>
+                <div className='card__actions'>
+                    <Button href={`/redirect?url=${link}`}>{productMessages.ctaButton}</Button>
                 </div>
             </div>
         </div>
