@@ -1,20 +1,34 @@
 interface GetProductsProps {
     search?: string
+    limit?: number
+    page?: number
 }
 
-export const getProducts = async ({ search = '' }: GetProductsProps = {}): Promise<IPromise> => {
+export const getProducts = async ({
+    search = '',
+    limit = 30,
+    page = 1,
+}: GetProductsProps = {}): Promise<IPromise> => {
     try {
         const searchParam = search ? `&search=${encodeURIComponent(search)}` : ''
-        const res = await fetch(`${process.env.API_URL}/api/products?limit=100${searchParam}`, {
-            next: { revalidate: 5 },
-        })
+        const pageParam = page ? `&page=${page}` : ''
+        const res = await fetch(
+            `${process.env.API_URL}/api/products?limit=${limit}${pageParam}${searchParam}`,
+            {
+                next: { revalidate: 5 },
+            }
+        )
         const data = await res.json()
         return data
     } catch (e) {
         return {
-            data: null,
+            data: false,
             message: `Erro ao carregar os produtos. ${e}`,
             status: 'error',
+            total: 0,
+            page: 0,
+            limit: 0,
+            totalPages: 0,
         }
     }
 }
@@ -31,6 +45,11 @@ export const getSingleProduct = async (id: string): Promise<IPromise> => {
             data: null,
             message: `Erro ao carregar o produto. ${e}`,
             status: 'error',
+            total: 0,
+            page: 0,
+            limit: 0,
+            totalPages: 0,
+
         }
     }
 }

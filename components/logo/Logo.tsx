@@ -9,7 +9,6 @@ export const Logo = async () => {
                 src={siteInfo.logo}
                 alt={'desconto porreta logo'}
                 sizes='(max-width: 300px) 100vw, (max-width: 150px) 50vw, 33vw"'
-                layout='responsive'
                 priority
                 width={300}
                 height={100}
