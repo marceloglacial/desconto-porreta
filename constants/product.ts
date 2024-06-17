@@ -6,5 +6,5 @@ export const productMessages = {
     notFound: 'Produto não encontrado',
     ctaButton: 'Resgatar desconto',
     emptyList: 'Nenhum produto encontrado.',
-    limit: 5,
+    limit: 30,
 }

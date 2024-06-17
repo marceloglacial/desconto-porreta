@@ -1,3 +1,5 @@
+import { productMessages } from '@/constants'
+
 interface GetProductsProps {
     search?: string
     limit?: number
@@ -6,7 +8,7 @@ interface GetProductsProps {
 
 export const getProducts = async ({
     search = '',
-    limit = 30,
+    limit = productMessages.limit,
     page = 1,
 }: GetProductsProps = {}): Promise<IPromise> => {
     try {
@@ -49,7 +51,6 @@ export const getSingleProduct = async (id: string): Promise<IPromise> => {
             page: 0,
             limit: 0,
             totalPages: 0,
-
         }
     }
 }

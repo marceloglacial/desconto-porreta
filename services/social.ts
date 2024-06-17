@@ -37,5 +37,9 @@ export const getSocial = async (): Promise<IPromise> => {
         data: items,
         message: `Sucesso`,
         status: 'success',
+        total: 1,
+        page: 1,
+        limit: 1,
+        totalPages: 1,
     }
 }
