@@ -29,6 +29,11 @@ interface ApiVendor {
 }
 
 interface IPromise {
+    total: number
+    page: number
+    limit: number
+    totalPages: number
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data: any
     message: string
     status: 'success' | 'loading' | 'error'

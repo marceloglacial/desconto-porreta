@@ -15,6 +15,10 @@ export const getVendors = async (): Promise<IPromise> => {
             data: null,
             message: `Erro ao carregar os produtos. ${e}`,
             status: 'error',
+            total: 0,
+            page: 0,
+            limit: 0,
+            totalPages: 0,
         }
     }
 }

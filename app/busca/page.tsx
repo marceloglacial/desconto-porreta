@@ -10,6 +10,7 @@ export default async function SearchResults({
 }) {
     const query = sanitizeQuery(searchParams)
     const products = await getProducts({ search: query })
+
     const allProducts: IProduct[] = products.data
     return (
         <>

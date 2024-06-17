@@ -45,7 +45,7 @@ const Produto = async ({ params }: { params: { id: string } }) => {
     const data = await getSingleProduct(params.id)
     const product: IProduct = data.data
 
-    if (data.status === 'error') return <h2>{productMessages.error.message}</h2>
+    if (data.status === 'error') return <h2>{productMessages.notFound}</h2>
 
     const { title, image, price, link, description, vendor_info } = product
     const vendor = vendor_info[0]
