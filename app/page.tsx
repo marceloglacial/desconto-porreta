@@ -1,4 +1,4 @@
-import { PaginationBar, ProductList } from '@/components'
+import { PaginationBar, ProductList, VendorsList } from '@/components'
 import { getProducts } from '@/services'
 
 export default async function Home() {
@@ -6,6 +6,7 @@ export default async function Home() {
     const allProducts: IProduct[] = products.data
     return (
         <div className='flex flex-wrap gap-8'>
+            <VendorsList />
             <ProductList products={allProducts} />
             <PaginationBar page={products.page} totalPages={products.totalPages} />
         </div>

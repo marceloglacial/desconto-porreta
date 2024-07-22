@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 const siteInfo = getSiteInfo()
 
 export async function generateMetadata(): Promise<Metadata> {
-    const siteInfo = getSiteInfo()
     return {
         title: `${siteInfo.title} - ${siteInfo.description}`,
         description: siteInfo.description,
