@@ -1,8 +1,3 @@
-interface IgetVendors {
-    data: IVendor[]
-    meta: Object
-}
-
 export const getVendors = async (): Promise<IPromise> => {
     try {
         const res = await fetch(`${process.env.API_URL}/api/vendors`, {
